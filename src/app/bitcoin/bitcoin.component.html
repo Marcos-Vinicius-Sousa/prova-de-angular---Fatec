@@ -1,0 +1,33 @@
+<br>
+<h2>Valor do Bitcoin em Real </h2>
+
+<h3>
+  <div *ngIf="BitcoinService.getMsg() == 'subiu' " style="padding:0;margin: auto;" class="alert alert-success"
+    role="alert">
+    Bitcoin acabou de aumentar! Agora esta valendo: {{BitcoinService.currentResponse.bpi.BRL.rate}} reais
+  </div>
+  <div *ngIf="BitcoinService.getMsg() == 'caiu' " style="padding:0;margin: auto;" class="alert alert-danger"
+    role="alert">
+    Bitcoin acabou de diminuir! Agora esta valendo: {{BitcoinService.currentResponse.bpi.BRL.rate}} reais
+  </div>
+</h3>
+<br>
+<hr />
+
+<div class="container-fluid">
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th class="border border-secundary"> Data/Hora </th>
+        <th class="border border-secundary"> Real</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let response of BitcoinService.updateList">
+      <td class="border border-secundary"> {{response.time.updated}}</td>
+      <td class="border border-secundary">
+        {{response.bpi.BRL.rate}}
+      </td>
+    </tr>
+  </table>
+</div>

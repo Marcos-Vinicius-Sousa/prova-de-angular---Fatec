@@ -1,0 +1,25 @@
+<br>
+<div id="dv1" class="container-fluid" style="margin-left:35%">
+  <h2> Compra e Venda de Bitcoin </h2>
+
+
+
+  <h2 style="color: darkblue">Digite a quantidade de Bitcoin:</h2>
+  <div id="div2" style="margin-left:10%;">
+    <input type="number" step="1" min="0" [(ngModel)]="nt" />
+    <br><br>
+  </div>
+  <button class="btn btn-success"
+  (click)="comprar()"
+  style="margin: 0 5%;">Comprar </button>
+  <button class="btn btn-danger"
+  (click)="vender()"
+  style="margin: 0 5%;">Vender</button>
+
+  <div style="margin: 0 10%;" class="container-fluid">
+    <br>
+    <p><strong>Saldo em Bitcoin: </strong> {{getSaldoR()}}
+    </p>
+    <p><strong>Saldo em Real: </strong> {{getSaldoB() }} </p>
+  </div>
+</div>
